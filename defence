@@ -1,0 +1,4 @@
+	1. Ensure AV software with Real-Time Scanning is active on all endpoints. This can detect and block malware attempts during extraction.
+	2. Consider disabling automatic script execution for file types commonly used in malware, like Executables (.exe), JavaScript (.js) or VBScript (.vbs) through the Windows Registry Editor.
+	3. PowerShell Execution Policy should be set to "Restricted", which prevents any scripts from running by default. 
+	4. Educate employees about the risks of opening unknown zip files, especially from untrusted sources. Train them to verify the sender and file content before opening.
