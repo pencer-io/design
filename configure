@@ -1,0 +1,36 @@
+	1. Configuration:
+		a. User Accounts and Permissions:
+			§ Create separate user accounts for students with limited privileges. Avoid using administrator accounts for everyday tasks.
+			§ Implement role-based access control (RBAC) to grant permissions based on user roles (e.g., instructor, student).
+			§ Consider using multi-factor authentication (MFA) for added login security.
+		b. Password Policies:
+			§ Enforce strong password policies with minimum length, character complexity requirements, and regular password changes.
+			§ Implement password lockout policies after a certain number of failed login attempts.
+		c. Firewall Settings:
+			§ Configure firewalls to restrict incoming and outgoing traffic based on predefined security rules.
+			§ Block unnecessary ports and services to minimize the attack surface.
+			§ Allow only authorized traffic for course lab activities.
+		d. System Updates:
+			§ Enable automatic updates for the operating system and installed software to patch vulnerabilities promptly.
+			§ Configure a system for testing updates in a non-production environment before deploying them to student labs.
+	2. Security Policy:
+		a. Develop a Document: Create a clear and concise security policy document outlining the rules and regulations for accessing and using the course lab system. This should include:
+			§ Acceptable use policy for data and software access.
+			§ Password management guidelines.
+			§ Data backup and recovery procedures.
+			§ Incident response plan for security breaches.
+			§ Reporting procedures for suspicious activity.
+		b. Policy Dissemination: Distribute the security policy to all instructors and students. Regularly review and update the policy as needed.
+	3. Identifying Threats:
+		a. Common Threats: 
+			§ Malware and Viruses: These can spread through infected files or downloads.
+			§ Phishing Attacks: Emails that trick users into revealing sensitive information.
+			§ Zero-Day Attacks: Previously unknown vulnerabilities that attackers exploit.
+			§ Social Engineering: Manipulation tactics to gain unauthorized access.
+			§ Denial-of-Service (DoS) Attacks: Attempts to overwhelm the system with traffic, making it unavailable to legitimate users.
+		b. Threat Assessment: Conduct a thorough risk assessment to identify specific vulnerabilities in your system and prioritize mitigation strategies.
+	4. Security Features:
+		a. Encryption: Utilize disk encryption to protect sensitive data at rest on the servers hosting course lab VMs.
+		b. VPNs: Consider using VPNs for secure remote access to the course lab system, especially for instructors.
+		c. IDPS/IPS: If resources allow, implement intrusion detection/prevention systems (IDPS/IPS) to monitor and block suspicious network activity.
+		d. Anti-Malware Software: Deploy anti-malware software on the server OS and potentially student lab VMs for additional protection. Consider disabling unnecessary features within the student VMs to further minimize attack surfaces.
