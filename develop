@@ -1,0 +1,40 @@
+	1. Development (Construct):
+		a. Technology Stack: Choose a suitable technology stack for web development. Popular options include:
+			§ Backend: Python (with Flask framework), Node.js (with Express framework), PHP (with Laravel framework)
+			§ Frontend: HTML, CSS, JavaScript (consider using a front-end framework like React or Vue.js for interactivity)
+			§ Database: PostgreSQL, MySQL
+		b. Secure User Login:
+			§ Implement user authentication using industry standards:
+				□ Hashing passwords with secure algorithms (e.g., bcrypt) to avoid storing passwords in plain text.
+				□ Using secure sessions with session management libraries to prevent session hijacking.
+				□ Consider multi-factor authentication (MFA) for added security (optional).
+		c. File Upload Functionality:
+			§ Implement secure file upload functionality:
+				□ Validate file types and sizes to prevent uploading malicious files.
+				□ Sanitize file names to prevent vulnerabilities like directory traversal attacks.
+				□ Store uploaded files securely on the server:
+					® Use a designated directory with restricted access permissions.
+					® Consider encrypting files at rest (optional, depending on data sensitivity).
+		d. File Management:
+			§ Develop functionalities for users to:
+				□ View a list of their uploaded files with information like name, size, and upload date.
+				□ Download their own uploaded files.
+				□ Delete their own uploaded files (implement proper access control to prevent unauthorized deletion).
+		e. Deployment:
+			§ Deploy the application to a web server accessible on the internet.
+			§ Configure the web server for security best practices (e.g., HTTPS encryption, keeping software updated).
+	2. Security Analysis (Analyse):
+		a. Static Code Analysis:
+			§ Use static code analysis tools (SAST, Bandit, Flake8) to identify potential vulnerabilities in the application code. These tools can detect common issues like SQL injection vulnerabilities and insecure coding practices.
+		b. Manual Penetration Testing:
+			§ Conduct manual penetration testing to simulate real-world attacks and identify exploitable vulnerabilities. This could involve:
+				□ Brute-force attacks: Testing the login system's resistance to attempts to guess passwords.
+				□ SQL injection attacks: Trying to inject malicious code into database queries.
+				□ Cross-Site Scripting (XSS) attacks: Injecting malicious scripts into the application to steal user data.
+				□ File upload vulnerabilities: Testing for vulnerabilities related to file type validation and sanitization.
+		c. Security Best Practices:
+			§ Review and implement security best practices throughout the development process to mitigate vulnerabilities. This includes:
+				□ Proper input validation and sanitization to prevent injection attacks.
+				□ Secure coding practices to prevent common coding errors that can be exploited.
+				□ Keeping software libraries and frameworks updated to address known vulnerabilities.
+
