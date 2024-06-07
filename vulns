@@ -1,0 +1,30 @@
+1. Define Threat Scope:
+	• Company Assets: Collaborate with the company to understand their critical assets (data, systems, applications) and their network architecture.
+	• Industry Threats: Research common threats targeting their industry sector (e.g., financial institutions face different threats than healthcare providers).
+2. Open-Source Intelligence (OSINT) Gathering:
+	• Social Media Monitoring:
+		○ Track relevant hashtags, keywords, and competitor mentions on platforms like Twitter, LinkedIn, and Facebook.
+		○ Identify discussions or rumors about potential attacks or vulnerabilities related to the company's industry or software they use.
+		○ Utilize tools like Hootsuite or Sprout Social for advanced social listening.
+	• Dark Web Monitoring:
+		○ Engage with specialized threat intelligence firms that monitor dark web forums, marketplaces, and hacker chat rooms.
+		○ These forums might contain discussions about upcoming attacks, exploits for known vulnerabilities, or stolen data that could be relevant to the company.
+		○ Caution: Navigating the dark web requires expertise and security precautions to avoid malware or scams. Consider leaving this to specialized firms.
+	• Industry Publications and Security Blogs:
+		○ Subscribe to security blogs, forums, and publications relevant to the company's industry and technology stack.
+		○ Stay updated on newly discovered vulnerabilities, attack trends, and mitigation strategies.
+	• Government and Industry Reports:
+		○ Review security reports published by government cybersecurity agencies (e.g., CISA in the US, NCSC in the UK) and industry organizations.
+		○ These reports often contain valuable insights into emerging threats and best practices for defense.
+3. Threat Intelligence Feeds:
+	• Commercial Threat Feeds: Consider subscribing to commercial threat intelligence feeds from reputable security vendors.
+		○ These feeds provide real-time or daily updates on new threats, indicators of compromise (IOCs), and malicious URLs.
+	• Free Threat Intelligence Feeds: Explore free threat intelligence feeds from open-source communities or security researchers.
+		○ While not as comprehensive as commercial feeds, they can still provide valuable insights.
+4. Vulnerability Management Tools:
+	• Implement vulnerability scanning tools to identify known weaknesses in the company's network infrastructure and applications.
+	• Regularly update these tools to ensure they detect the latest vulnerabilities.
+5. Utilizing Collected Intelligence:
+	• Centralized Repository: Maintain a central repository to store and analyze the collected threat intelligence data.
+	• Threat Analysis: Analyze the collected information to identify potential attack vectors, exploit trends, and the actors behind these threats.
+	• Prioritization: Prioritize identified threats based on their likelihood and potential impact on the company's critical assets.
