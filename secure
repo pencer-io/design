@@ -1,0 +1,27 @@
+	1. Configuring Security Technologies (Configure):
+		a. Firewalls:
+			§ Define firewall rules to allow legitimate traffic (e.g., web traffic on port 80/443) and block all other incoming traffic.
+			§ Consider creating separate firewall zones for the web application server and other network segments for additional security.
+		b. Anti-Virus Software:
+			§ Install and configure anti-virus software on the web server to detect and quarantine malicious files.
+			§ Schedule regular scans and updates for the anti-virus software to ensure it remains effective.
+		c. Intrusion Detection and Prevention System (IDPS):
+			§ Configure the IDPS to monitor network traffic for suspicious activity based on predefined rules.
+			§ Set up alerts to notify administrators of potential security threats detected by the IDPS.
+	2. Evaluating Security Technologies (Use):
+		a. Improved Network Security: Firewalls act as a first line of defense, filtering incoming and outgoing traffic and reducing the attack surface.
+		b. Malware Protection: Anti-virus software helps detect and prevent malware infections that could compromise the web server or user data.
+		c. Intrusion Detection and Prevention: IDPS systems provide real-time monitoring and can potentially block malicious attempts to access the system.
+	3. Key Management for Secure Communication (Key Management):
+		a. Cryptographic Protocols:
+			§ Choose appropriate cryptographic protocols for secure communication and data storage in your web application. Consider:
+				□ HTTPS: Utilizes Transport Layer Security (TLS) for secure communication between the web server and user's browser. This encrypts data in transit, protecting it from eavesdropping.
+				□ Data Encryption at Rest: Implement encryption for sensitive data stored on the server. This protects data even if an attacker gains access to the server. Popular options include AES (Advanced Encryption Standard) or similar algorithms.
+		b. Key Generation and Storage:
+			§ Generate strong cryptographic keys using a secure key generation tool.
+			§ Store these keys securely using a dedicated Key Management System (KMS). KMS solutions offer features like secure key storage, access control, and key rotation mechanisms.
+		c. Key Use and Management:
+			§ Implement secure key management practices:
+				□ Limit access to cryptographic keys to authorized personnel only.
+				□ Rotate keys regularly to minimize the risk of compromise.
+				□ Implement secure key lifecycle management procedures.
