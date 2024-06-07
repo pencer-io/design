@@ -28,3 +28,30 @@
 	• Centralized Repository: Maintain a central repository to store and analyze the collected threat intelligence data.
 	• Threat Analysis: Analyze the collected information to identify potential attack vectors, exploit trends, and the actors behind these threats.
 	• Prioritization: Prioritize identified threats based on their likelihood and potential impact on the company's critical assets.
+
+Company Assets: 
+	• Servers hosting customer databases and financial information
+	• Internal network infrastructure (routers, switches, firewalls)
+	• Web applications used by customers and employees
+	• Remote access points for employee access
+Industry: (Replace with the specific industry)
+	• Financial Services
+Threat Intelligence Findings:
+	• Social media discussions about a new exploit targeting a specific web application framework used by the company.
+	• Dark web marketplace listing stolen credentials for a popular cloud provider used by the company.
+	• Industry report highlighting an increase in ransomware attacks targeting financial institutions.
+
+Vulnerability Assessment Process:
+	1. Scanning:
+		○ Automated Scanners: Utilize automated vulnerability scanners like Acunetix, Nessus, or OpenVAS to identify common web application vulnerabilities (e.g., SQL injection, XSS).
+		○ Configuration Review: Manually review the configuration of your web server, application server, and database to identify potential security misconfigurations.
+	2. Manual Penetration Testing:
+		○ Ethical Hacker Simulates Attack: Engage a security professional or use a penetration testing platform to simulate real-world attacks and identify exploitable vulnerabilities.
+		○ Focus on Identified Threats: Prioritize testing based on the threats identified in your threat model.
+	3. Code Review:
+		○ Static Code Analysis: Use static code analysis tools (SAST) like SASTify, Fortify, or CodeClimate to identify potential coding errors and security vulnerabilities within your application code.
+		○ Manual Code Review: Conduct manual code reviews to identify logic flaws or insecure coding practices that could be exploited by attackers.
+Resources for Vulnerability Assessment:
+	• OWASP Top 10: The Open Web Application Security Project (OWASP) Top 10 provides a list of the most critical web application security risks. Focus on testing for these vulnerabilities first: https://owasp.org/www-project-top-ten/
+	• National Institute of Standards and Technology (NIST) Cybersecurity Framework: The NIST Cybersecurity Framework provides a guide for identifying, protecting, detecting, responding to, and recovering from cybersecurity incidents: https://www.nist.gov/cyberframework
+
