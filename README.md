@@ -1,6 +1,8 @@
 Design resource for work
 ------------------------
 
+Web resources used for design - https://start.me/p/NQMRjz/start-page
+
 Build a system - https://github.com/pencer-io/design/blob/main/build
 
 Configure it - https://github.com/pencer-io/design/blob/main/configure
