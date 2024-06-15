@@ -1,0 +1,50 @@
+	▪ What are the best practices and techniques for debugging?
+	Identify the problem: Clearly define the unexpected behavior you're encountering. Is it a crash, incorrect output, or something else?
+	Reproduce the problem: Consistently recreate the issue to isolate the root cause.
+	Simplify the problem: Break down the code into smaller pieces to pinpoint where the bug occurs.
+	Print statements: Strategically place print statements to display variable values at different points in your code.
+	Use a debugger: Debuggers like GDB and Valgrind allow stepping through code line-by-line, examining variables, and setting breakpoints.
+
+	▪ Explaining static analysis, dynamic analysis, and peer-reviewing of code.
+	Static analysis involves analyzing code without actually running it. It can identify potential bugs like syntax errors, unused variables, and code smells (indicators of bad coding practices).
+	Compilers: Most compilers can generate warnings for suspicious code constructs.
+	Static code checkers: Tools like Cppcheck (C/C++) and Pylint (Python) perform in-depth static analysis to identify potential issues.
+	
+	Dynamic analysis involves examining program behavior while it's running. This helps identify runtime errors that static analysis might miss.
+	Debuggers: Tools like GDB (C/C++) and Valgrind (various languages) allow you to step through code, examine variables, and set breakpoints to identify runtime issues.
+	Profilers: Tools like gprof (C/C++) analyze program execution and pinpoint performance bottlenecks.
+	
+	Peer Review:
+	Having another programmer review your code can be invaluable. They can spot potential bugs you might have missed due to familiarity with your own code.
+	
+	▪ How do you prevent bugs in your code? How do you use compiler flags and static code checkers to identify bugs in an early stage of coding?
+	Write clean code: Follow good coding practices like proper indentation, meaningful variable names, and modular functions.
+	Use meaningful variable names: Descriptive names improve code readability and understanding.
+	Document your code: Explain the purpose of your code and key functions.
+	Test your code thoroughly: Write unit tests to verify individual components and integration tests to ensure different parts work together.
+	Use compiler flags: Enable compiler warnings to catch potential issues early on.
+	Consider static code checkers: These tools can identify common coding mistakes and bad practices.
+	
+	▪ Demonstrate debugging of a serial program using any debugging tools such as GDB and Valgrind to fix a serial program.
+	Example serial program crashes when trying to write data to the serial port.
+	Steps:
+	Compile with debugging symbols: Use the -g flag during compilation to include debugging symbols.
+	Start GDB: Open a terminal and run gdb your_program_name.
+	Set a breakpoint: Use the break command followed by the line number where you suspect the issue.
+	Run the program: Use the run command in GDB.
+	Step through the code: Use the step command to execute one line at a time.
+	Examine variables: Use the print command followed by a variable name to see its value.
+	Identify the problem: Analyze variable values and pinpoint where the issue arises.
+	Fix the code: Edit the code outside of GDB and restart the debugging process to verify the fix.
+	
+	▪ Demonstrate debugging of a parallel program using any debugging tools such as Intel Inspector and ITAC to fix a parallel program.
+	Example your parallel program has a race condition where two threads access a shared resource without proper synchronization.
+	Steps:
+	Compile with debugging symbols: Include debugging symbols during compilation.
+	Launch Inspector: Use the inspector command followed by your program name.
+	Set breakpoints: Set breakpoints at critical sections where synchronization issues might occur.
+	Run the program: Start the program within Inspector.
+	Analyze program execution: Inspector allows you to visualize thread activity and identify synchronization problems.
+	Identify the problem: Analyze thread interactions and locate the race condition.
+	Fix the code: Implement proper synchronization mechanisms like mutexes or semaphores.
+	Restart the debugging session: Verify if the fix resolves the issue.
