@@ -1,0 +1,109 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+# Load the data
+print("Loading data...")
+df = pd.read_csv('your_exported_file.csv')  # Replace with your actual filename
+print(f"Data loaded successfully. Shape: {df.shape}")
+
+# Print column names
+print("Columns in the dataset:", df.columns.tolist())
+
+# Preprocessing
+print("\nPreprocessing data...")
+
+# Remove duplicates
+df_clean = df.drop_duplicates()
+print(f"Rows after removing duplicates: {len(df_clean)}")
+
+# Handle missing values
+df_clean = df_clean.dropna()
+print(f"Rows after removing null values: {len(df_clean)}")
+
+# Convert 'Time' to datetime
+df_clean['Time'] = pd.to_datetime(df_clean['Time'])
+
+# Function to safely save plots
+def save_plot(fig, filename):
+    try:
+        fig.savefig(filename)
+        print(f"Saved plot: {filename}")
+    except Exception as e:
+        print(f"Error saving plot {filename}: {e}")
+    plt.close(fig)
+
+# Security Analysis
+print("\nPerforming security analysis...")
+
+# 1. Time-based analysis
+df_clean['Hour'] = df_clean['Time'].dt.hour
+hourly_activity = df_clean['Hour'].value_counts().sort_index()
+print("\nTraffic distribution by hour:")
+print(hourly_activity)
+
+fig, ax = plt.subplots(figsize=(12, 6))
+hourly_activity.plot(kind='bar', ax=ax)
+ax.set_title('Traffic Distribution by Hour')
+ax.set_xlabel('Hour of Day')
+ax.set_ylabel('Packet Count')
+plt.tight_layout()
+save_plot(fig, 'hourly_activity.png')
+
+# 2. Protocol analysis
+protocol_counts = df_clean['Protocol'].value_counts()
+print("\nProtocol distribution:")
+print(protocol_counts.head(10))
+
+fig, ax = plt.subplots(figsize=(12, 6))
+protocol_counts.head(10).plot(kind='bar', ax=ax)
+ax.set_title('Top 10 Protocol Distribution')
+ax.set_xlabel('Protocol')
+ax.set_ylabel('Count')
+plt.xticks(rotation=45)
+plt.tight_layout()
+save_plot(fig, 'protocol_distribution.png')
+
+# 3. IP address analysis
+top_src_ips = df_clean['Source'].value_counts().head(10)
+print("\nTop 10 source IP addresses:")
+print(top_src_ips)
+
+top_dst_ips = df_clean['Destination'].value_counts().head(10)
+print("\nTop 10 destination IP addresses:")
+print(top_dst_ips)
+
+# 4. Packet length analysis
+df_clean['Length'] = pd.to_numeric(df_clean['Length'], errors='coerce')
+print("\nPacket length statistics:")
+print(df_clean['Length'].describe())
+
+fig, ax = plt.subplots(figsize=(12, 6))
+df_clean['Length'].hist(bins=50, ax=ax)
+ax.set_title('Packet Length Distribution')
+ax.set_xlabel('Packet Length')
+ax.set_ylabel('Frequency')
+plt.tight_layout()
+save_plot(fig, 'packet_length_distribution.png')
+
+# 5. Connection pair analysis
+connection_pairs = df_clean.groupby(['Source', 'Destination']).size().sort_values(ascending=False)
+print("\nTop 10 connection pairs:")
+print(connection_pairs.head(10))
+
+# 6. Time series analysis
+traffic_over_time = df_clean.set_index('Time').resample('1Min').size()
+print("\nTraffic volume per minute:")
+print(traffic_over_time.describe())
+
+fig, ax = plt.subplots(figsize=(12, 6))
+traffic_over_time.plot(ax=ax)
+ax.set_title('Network Traffic Over Time')
+ax.set_xlabel('Time')
+ax.set_ylabel('Packet Count')
+plt.tight_layout()
+save_plot(fig, 'traffic_over_time.png')
+
+print("\nAnalysis complete. Check the generated PNG files for visualizations.")
+print("Current working directory:", os.getcwd())
+print("Files in current directory:", os.listdir())
