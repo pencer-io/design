@@ -1,0 +1,42 @@
+	▪ Differentiating normal programming and defensive programming based on high availability, safety, and security.
+	Normal programming focuses on functionality, aiming to get the job done. While it might include basic error handling, it doesn't prioritize anticipating and handling unexpected situations.
+	Defensive programming, on the other hand, prioritizes robustness and reliability. It assumes things can go wrong and actively tries to prevent or gracefully handle potential issues. This is especially important for applications requiring high availability, safety, or security.
+	
+	Key Differences:
+	High Availability: Defensive programming is crucial for systems that need to be constantly operational (e.g., banking applications). It utilizes techniques like redundant servers and error handling to minimize downtime.
+	Safety: In safety-critical systems (e.g., medical devices), defensive programming is vital. It involves extensive validation and checks to prevent catastrophic failures.
+	Security: Defensive programming helps mitigate security vulnerabilities in applications handling sensitive data. Techniques like input validation and secure coding practices help prevent unauthorized access or malicious attacks.
+	
+	▪ What you mean when using good coding styles, good documentation strategies and good code testing techniques in defensive programming?
+	Good Coding Styles:
+	Meaningful variable names: Improve code readability and understanding, making it easier to identify potential issues during code reviews.
+	Proper indentation: Enhances code readability and helps identify potential logic errors.
+	Modular functions: Break down complex logic into smaller, well-defined functions for better maintainability and easier debugging.
+	
+	Good Documentation Strategies:
+	Document assumptions: Clearly state the expected behavior of inputs and outputs.
+	Document error handling: Explain how the code handles various error conditions.
+	Document code purpose: Provide an overview of what the code does and its intended functionality. This helps reviewers identify potential problems.
+	
+	Good Code Testing Techniques:
+	Unit testing: Write tests for individual functions to isolate and fix bugs early on.
+	Integration testing: Ensure different parts of your code work together seamlessly.
+	Input validation testing: Test your code with various valid and invalid inputs to identify potential problems with user input or external data.
+	
+	▪ Provide a use case of defensive programming and explain why you think defensive programming is essential for your chosen use case.
+	Scenario: A medical device control software is responsible for delivering precise dosages of medication to a patient.
+	
+	Why Defensive Programming is Essential:
+	Safety-critical application: Even minor errors in this software can have life-threatening consequences.
+	Needs to handle unexpected inputs: Malfunctioning sensors or user errors could lead to incorrect data being sent to the device.
+	High availability: The software needs to be operational throughout treatment to ensure continuous medication delivery.
+	
+	Defensive Programming Techniques:
+	Input validation: Rigorously validate incoming data from sensors to ensure it falls within expected ranges.
+	Error handling: Implement robust error handling to gracefully handle unexpected situations like sensor failures or communication errors.
+	Redundancy: Consider implementing redundant checks and alarms to prevent medication overdoses.
+	
+	▪ Explain various downsides of defensive programming.
+	Increased development time: Implementing defensive measures takes additional time and effort.
+	Potential performance overhead: Extensive validations and checks might introduce slight performance overhead compared to a simpler, less robust approach.
+	Over-engineering: Overly defensive code might become unnecessarily complex and difficult to maintain if the potential risks are low.
