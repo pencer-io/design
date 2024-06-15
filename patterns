@@ -1,0 +1,169 @@
+	▪ What are strongly typed languages? Explain their benefits and limitations in defensive programming.
+	Strongly typed languages enforce data types for variables and expressions. This means the compiler or interpreter verifies that operations are performed on compatible data types, preventing many runtime errors.
+	Benefits in Defensive Programming:
+	Reduced runtime errors: Type checking identifies potential issues early in the development process, leading to more robust code.
+	Improved code readability: Explicit data types make code clearer and easier to understand, aiding in code reviews and maintenance.
+	Potential performance optimizations: Compilers can optimize code based on known data types.
+	
+	Limitations:
+	Strictness: Type mismatches can lead to compile-time errors, requiring code modifications even for seemingly harmless operations.
+	Runtime type checking might still be needed: While strong typing helps, it might not catch all potential issues, especially when dealing with external data sources or user input.
+	
+	▪ Most programming languages are not perfect for defensive programming so what would be necessary protections or programming rules you will apply in your defensive coding?
+	Even in strongly typed languages, additional defensive coding practices are essential:
+	Input validation: Always validate user input and external data to ensure it falls within expected ranges or formats.
+	Error handling: Implement robust error handling to gracefully handle unexpected situations like invalid data or resource limitations.
+	Boundary checks: For array or buffer accesses, perform checks to prevent out-of-bounds errors.
+	Resource management: Explicitly manage resources like memory or file handles to avoid leaks or dangling pointers.
+	Secure coding practices: Follow secure coding guidelines to prevent vulnerabilities like buffer overflows or SQL injection attacks.
+
+▪ Illustrate an application of the following rules using a suitable programming example: rules for naming objects, rules for prohibiting certain constructions, rules exported by reused/pre-existing elements, and rules exported by execution platform.
+	1. Rules for Naming Objects:
+	Rule: Use descriptive and consistent variable names that reflect their purpose and data type (e.g., user_age instead of just age).
+	2. Rules for Prohibiting Constructions:
+	Rule: Avoid using deprecated functionalities or practices known to be error-prone.
+	3. Rules Exported by Reused Elements:
+	Rule: Document expected behavior and limitations of reused components (functions, libraries) to avoid misuse.
+  4. Rules Exported by Execution Platform:
+	Rule: Be aware of platform-specific limitations and adjust code accordingly.
+
+import re
+from typing import List, Dict
+
+# 1. Rules for naming objects
+class BankAccount:
+    def __init__(self, account_number: str, balance: float):
+        # Rule: Use snake_case for variable names
+        self.account_number = account_number
+        self.balance = balance
+
+    # Rule: Use verb phrases for method names
+    def deposit_money(self, amount: float):
+        self.balance += amount
+
+    def withdraw_money(self, amount: float):
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            raise ValueError("Insufficient funds")
+
+# 2. Rules for prohibiting certain constructions
+def validate_account_number(account_number: str) -> bool:
+    # Rule: Prohibit account numbers that don't match the required pattern
+    pattern = r'^[A-Z]{2}\d{10}$'
+    return bool(re.match(pattern, account_number))
+
+# 3. Rules exported by reused/pre-existing elements
+from decimal import Decimal, ROUND_HALF_UP
+
+def calculate_interest(principal: float, rate: float, time: int) -> float:
+    # Rule: Use Decimal for precise financial calculations
+    amount = Decimal(principal) * (Decimal(1) + Decimal(rate))**Decimal(time)
+    return float(amount.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
+
+# 4. Rules exported by execution platform
+
+---------------------------------
+Example
+-------
+import platform
+
+def get_system_info() -> Dict[str, str]:
+    # Rule: Adapt to the execution platform
+    if platform.system() == "Windows":
+        return {"os": "Windows", "version": platform.version()}
+    elif platform.system() == "Darwin":
+        return {"os": "macOS", "version": platform.mac_ver()[0]}
+    else:
+        return {"os": "Linux", "version": platform.version()}
+
+# Usage example
+if __name__ == "__main__":
+    # Rule application: Naming objects
+    account = BankAccount("GB1234567890", 1000.0)
+    
+    # Rule application: Prohibiting certain constructions
+    valid_account = validate_account_number("GB1234567890")
+    invalid_account = validate_account_number("123456789")
+    print(f"Valid account: {valid_account}")
+    print(f"Invalid account: {invalid_account}")
+    
+    # Rule application: Reused/pre-existing elements
+    interest = calculate_interest(1000, 0.05, 5)
+    print(f"Interest calculated: {interest}")
+    
+    # Rule application: Execution platform
+    system_info = get_system_info()
+    print(f"System info: {system_info}")
+
+Rules for naming objects:
+
+Use of snake_case for variable names (e.g., account_number, balance)
+Use of verb phrases for method names (e.g., deposit_money, withdraw_money)
+
+Rules for prohibiting certain constructions:
+The validate_account_number function prohibits account numbers that don't match a specific pattern
+
+Rules exported by reused/pre-existing elements:
+Use of the Decimal class from the decimal module for precise financial calculations
+
+Rules exported by execution platform:
+The get_system_info function adapts its behavior based on the operating system it's running on
+----------------------
+
+	▪ What are guard clauses and assertions? Explain both with a suitable example.
+	Guard Clauses:
+	Conditional statements placed at the beginning of a function or block to check for invalid conditions and return early if necessary. Improve code readability and maintainability.
+ Guard Clauses:
+
+Guard clauses are conditional statements placed at the beginning of a function or method to handle edge cases or invalid inputs early. They help to reduce nesting and improve code readability by returning early from a function if certain conditions are not met.
+Example of guard clauses:
+def divide_numbers(a, b):
+    # Guard clause for division by zero
+    if b == 0:
+        return "Error: Cannot divide by zero"
+    
+    # Guard clause for non-numeric inputs
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        return "Error: Inputs must be numbers"
+    
+    # Main logic
+    return a / b
+
+# Usage
+print(divide_numbers(10, 2))  # Output: 5.0
+print(divide_numbers(10, 0))  # Output: Error: Cannot divide by zero
+print(divide_numbers("10", 2))  # Output: Error: Inputs must be numbers
+In this example, we use guard clauses to check for invalid inputs (division by zero and non-numeric inputs) before proceeding with the main logic of the function. This approach makes the code more readable and helps to handle error cases early.
+
+Assertions:
+
+Assertions are debug-time checks that verify if a condition is true. They are used to catch programmer errors and ensure that certain conditions are met during development. Assertions are typically disabled in production code.
+Example of assertions:
+def calculate_average(numbers):
+    assert isinstance(numbers, list), "Input must be a list"
+    assert len(numbers) > 0, "List cannot be empty"
+    assert all(isinstance(n, (int, float)) for n in numbers), "All elements must be numbers"
+
+    total = sum(numbers)
+    count = len(numbers)
+    return total / count
+
+# Usage
+try:
+    print(calculate_average([1, 2, 3, 4, 5]))  # Output: 3.0
+    print(calculate_average([]))  # Raises AssertionError: List cannot be empty
+    print(calculate_average("not a list"))  # Raises AssertionError: Input must be a list
+    print(calculate_average([1, 2, "3", 4, 5]))  # Raises AssertionError: All elements must be numbers
+except AssertionError as e:
+    print(f"AssertionError: {e}")
+In this example, we use assertions to check that the input is a non-empty list containing only numbers. Assertions help catch programming errors early in the development process and make it easier to identify the source of problems.
+Key differences between guard clauses and assertions:
+
+Purpose: Guard clauses are used for handling expected error conditions, while assertions are used to catch programmer errors and unexpected situations.
+Runtime behavior: Guard clauses are always active, while assertions can be disabled in production code.
+Error handling: Guard clauses typically return error messages or raise exceptions, while assertions raise AssertionError when the condition is false.
+Usage: Guard clauses are used at the beginning of functions to handle invalid inputs, while assertions can be used throughout the code to verify assumptions.
+
+Both guard clauses and assertions contribute to writing more robust and maintainable code by clearly defining expectations and handling error cases effectively.
+
