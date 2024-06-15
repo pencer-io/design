@@ -1,0 +1,129 @@
+import pandas as pd
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.ensemble import IsolationForest
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+
+def load_data(file_path):
+    """
+    Load CSV file into a pandas DataFrame.
+    """
+    df = pd.read_csv(file_path)
+    return df
+
+def preprocess_data(df):
+    """
+    Preprocess data: Clean, convert types, and filter relevant columns.
+    """
+    df.dropna(inplace=True)
+    df.drop_duplicates(inplace=True)
+    df['Time'] = pd.to_datetime(df['Time'])
+    df['Length'] = pd.to_numeric(df['Length'], errors='coerce')
+    return df
+
+def clustering_analysis(df):
+    """
+    Perform clustering analysis to identify groups of similar traffic.
+    """
+    print("Performing clustering analysis...")
+    features = ['Length']
+    X = df[features].values
+
+    # Standardize features
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    # Apply KMeans clustering
+    kmeans = KMeans(n_clusters=3)
+    df['Cluster'] = kmeans.fit_predict(X_scaled)
+
+    plt.scatter(df['Time'], df['Length'], c=df['Cluster'], cmap='viridis')
+    plt.title('Clustering Analysis')
+    plt.xlabel('Time')
+    plt.ylabel('Length')
+    plt.show()
+
+def outlier_detection(df):
+    """
+    Perform outlier detection to identify anomalous traffic.
+    """
+    print("Performing outlier detection...")
+    features = ['Length']
+    X = df[features].values
+
+    # Standardize features
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    # Apply Isolation Forest
+    isolation_forest = IsolationForest(contamination=0.01)  # 1% contamination
+    df['Anomaly'] = isolation_forest.fit_predict(X_scaled)
+
+    anomalies = df[df['Anomaly'] == -1]
+
+    plt.scatter(df['Time'], df['Length'], c=df['Anomaly'], cmap='coolwarm')
+    plt.title('Outlier Detection')
+    plt.xlabel('Time')
+    plt.ylabel('Length')
+    plt.show()
+
+    return anomalies
+
+def analyze_quic_traffic(df):
+    """
+    Analyze QUIC traffic for unusual patterns.
+    """
+    print("Analyzing QUIC traffic...")
+    quic_traffic = df[df['Protocol'].str.contains('QUIC', case=False, na=False)]
+
+    if quic_traffic.empty:
+        print("No QUIC traffic detected.")
+        return
+
+    # Output details of QUIC traffic
+    print("QUIC Traffic Details:")
+    print(quic_traffic[['Time', 'Source', 'Destination', 'Protocol', 'Length', 'Info']])
+
+    return quic_traffic
+
+def extract_dns_queries(df):
+    """
+    Extract DNS queries to list visited destinations.
+    """
+    print("Extracting DNS queries...")
+    dns_traffic = df[df['Protocol'].str.contains('DNS', case=False, na=False)].copy()
+    dns_traffic.loc[:, 'Queried_Domain'] = dns_traffic['Info'].str.extract(r'(\b(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,6}\b)')
+
+    visited_domains = dns_traffic['Queried_Domain'].dropna().unique()
+    print("Visited Domains:")
+    for domain in visited_domains:
+        print(domain)
+
+    return visited_domains
+
+def main():
+    file_path = 'interesting.csv'  # Using the specified CSV file name
+    
+    df = load_data(file_path)
+    df = preprocess_data(df)
+    
+    clustering_analysis(df)
+    
+    anomalies = outlier_detection(df)
+    if not anomalies.empty:
+        print("Anomalies detected:")
+        print(anomalies[['Time', 'Source', 'Destination', 'Protocol', 'Length', 'Info']])
+    else:
+        print("No anomalies detected.")
+    
+    quic_traffic = analyze_quic_traffic(df)
+    if quic_traffic is not None:
+        print("QUIC traffic analysis completed.")
+
+    visited_domains = extract_dns_queries(df)
+    if visited_domains.size > 0:
+        print("Visited domains analysis completed.")
+
+if __name__ == "__main__":
+    main()
