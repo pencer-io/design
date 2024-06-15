@@ -1,0 +1,90 @@
+Know how to create a reasoned argument employing evidence to support a position.
+To create a reasoned argument employing evidence to support a position, one should start by clearly defining the position, then gather relevant and credible evidence from diverse sources. This evidence should be organized logically and presented using sound reasoning techniques such as inductive, deductive, or analogical reasoning. The argument should address potential counterpoints, consider ethical implications, and cite sources properly. It's crucial to use clear, concise language and maintain objectivity throughout. The process concludes with a review to ensure the argument is coherent, well-supported, and effectively communicates the position.
+
+Know how typical threat actors’ actions appear in typical sources of information.
+To understand how typical threat actors' actions appear in typical sources of information, one should be familiar with various intelligence sources and the patterns of behavior exhibited by different types of threat actors. This involves recognizing signature activities, tactics, techniques, and procedures (TTPs) associated with specific threat groups as they manifest in open-source intelligence (OSINT), signals intelligence (SIGINT), human intelligence (HUMINT), and other collection methods. It requires the ability to identify indicators and warnings across diverse information streams, correlate seemingly disparate data points, and discern genuine threats from false positives or deliberate deception. This knowledge enables analysts to effectively monitor, detect, and anticipate threat activities by recognizing their characteristic signatures in available intelligence sources.
+
+Know how to source intelligence ethically so that it may be used as required.
+To source intelligence ethically so that it may be used as required, one must adhere to legal and moral standards throughout the intelligence gathering process. This involves using only legitimate and authorized methods of collection, respecting privacy laws and human rights, and ensuring the integrity and reliability of sources. Ethical sourcing also requires verifying information through multiple channels, maintaining objectivity, and avoiding bias or manipulation of data. It's crucial to consider the potential consequences of intelligence collection on individuals and communities, and to prioritize methods that minimize harm. Furthermore, proper documentation and handling of sourced intelligence is essential to maintain its usability and admissibility in various contexts, whether for legal, policy-making, or operational purposes. Ultimately, ethical sourcing ensures that intelligence is not only effective but also legally and morally defensible.
+
+Understanding the methods an attacker or threat actor may use to build knowledge of a system they have limited or no direct access to.
+Phishing: This involves deceptive attempts to obtain sensitive information by disguising as a trustworthy entity in electronic communication. Attackers use this method to gather credentials, system details, or install malware, often through fraudulent emails or websites.
+Exploiting an insider: This method leverages individuals with legitimate access to the target system. Attackers may manipulate, bribe, or coerce insiders to provide information or access. This could range from social engineering to recruiting disgruntled employees.
+Port scanning: This technique involves probing a server or network host for open ports. Attackers use this to identify services running on a system, potential vulnerabilities, and entry points. It's often a preliminary step in planning more targeted attacks.
+Open-source intelligence (OSINT): This involves collecting and analyzing publicly available information about the target system or organization. Sources may include company websites, social media, public records, and technical forums. OSINT can reveal valuable information about system architecture, technologies used, and potential vulnerabilities without directly interacting with the target system.
+These methods allow threat actors to gather critical information and identify potential attack vectors without requiring direct access to the target system, enabling them to plan and execute more sophisticated attacks.
+
+• asset valuation and management concepts.
+Asset valuation and management concepts involve identifying, prioritizing, and protecting an organization's critical assets. This includes cataloging both tangible and intangible assets, assessing their value and vulnerability, implementing appropriate security measures, and continuously monitoring their status. The goal is to efficiently allocate resources, focusing on the most crucial assets and their associated risks, to enhance overall security and operational resilience.
+
+risk analysis methodologies in common use.
+Risk analysis methodologies commonly used in cybersecurity and threat assessment typically include:
+1. Quantitative Risk Analysis: Uses numerical values to assess probability and impact of risks, often resulting in an expected monetary value of potential losses.
+2. Qualitative Risk Analysis: Relies on descriptive scales (e.g., low, medium, high) to evaluate likelihood and impact of risks, useful when precise data is unavailable.
+3. FAIR (Factor Analysis of Information Risk): A model for understanding, analyzing, and measuring information risk in financial terms.
+4. OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation): Focuses on organizational risk and strategic issues, less on technology.
+5. NIST Risk Management Framework: Provides a structured approach to integrating risk management into organizational processes.
+6. ISO 31000: Provides principles and guidelines for effective risk management across various industries.
+These methodologies help organizations identify, assess, and prioritize risks, enabling informed decision-making about risk mitigation strategies and resource allocation.
+
+risk appetite and risk tolerance concepts.
+**Risk Appetite:**
+Risk appetite refers to the amount and type of risk that an organization is willing to take in order to achieve its objectives. It is a strategic decision, reflecting the organization's philosophy towards risk-taking. The risk appetite is influenced by various factors including the organization's culture, industry regulations, stakeholder expectations, and financial capacity. For instance, a fintech company might have a high risk appetite for adopting innovative technologies but a low risk appetite for regulatory compliance issues. Defining the risk appetite helps guide decision-making processes and aligns the organization's strategy with its risk management practices.
+**Risk Tolerance:**
+Risk tolerance is the specific level of risk that an organization can withstand in relation to each identified risk. It is more operational than risk appetite and often quantified to facilitate monitoring and management. Risk tolerance levels are set for different risk categories, considering the potential impact on the organization’s performance, financial health, and reputation. For example, an organization may tolerate a certain percentage of downtime in its IT systems but have zero tolerance for breaches of sensitive customer data. Establishing clear risk tolerance thresholds ensures that risks are managed within acceptable limits and supports proactive risk mitigation.
+Understanding both concepts is crucial for effective risk management. Risk appetite sets the overall direction for risk-taking, while risk tolerance provides detailed guidelines for handling specific risks, ensuring that the organization operates within its acceptable risk boundaries.
+
+economics of security concepts
+The economics of security involves understanding the trade-offs between the costs of implementing security measures and the benefits of reducing risks. This field focuses on evaluating the financial implications of cybersecurity decisions and optimizing resource allocation to maximize security and minimize potential losses. Here are some key concepts:
+Cost-Benefit Analysis (CBA): Evaluates the costs of security measures against the benefits of preventing incidents.
+Return on Security Investment (ROSI): Measures the financial return from cybersecurity investments.
+Risk Transfer: Shifts financial risk to third parties through cyber insurance.
+Externalities: Considers the broader impact of an organization’s security on others.
+Information Asymmetry: Addresses the imbalance of security information between parties, such as providers and consumers.
+Incentives: Creates motivations for stakeholders to maintain strong security practices.
+Game Theory: Analyzes strategic interactions between attackers and defenders to optimize defense strategies.
+
+different ways of treating risk
+Mitigation: Implement measures to reduce the impact or likelihood of risks. This includes installing security systems, conducting regular audits, and providing employee training.
+Transfer: Shift the financial burden of risk to a third party, typically through insurance or outsourcing certain functions.
+Acceptance: Acknowledge the risk and decide to bear any potential impacts because the cost of mitigation or transfer is higher than the risk itself.
+Avoidance: Eliminate the risk entirely by discontinuing the activities that generate it.
+
+principles of system risk modelling
+System risk modelling involves assessing and understanding risks within complex systems to enhance decision-making and risk management. Key principles include:
+Holistic View: Consider the entire system, including interdependencies and interactions between components, to identify potential risks.
+Quantitative and Qualitative Analysis: Use both numerical data and expert judgment to assess risks comprehensively.
+Scenario Analysis: Evaluate different potential scenarios to understand how various risks might impact the system under different conditions.
+Probability Assessment: Estimate the likelihood of different risk events occurring.
+Impact Analysis: Assess the potential consequences of risk events on system performance, safety, and financial health.
+Continuous Monitoring: Regularly update risk models to reflect changes in the system and its environment.
+Stakeholder Involvement: Engage relevant stakeholders to ensure that diverse perspectives and expertise are incorporated into the risk assessment.
+By following these principles, organizations can develop robust risk models that support effective risk management and informed decision-making.
+
+System Risk Modelling Methodology
+A systematic approach to risk modelling involves several key steps:
+Define Objectives and Scope: Clearly articulate the goals of the risk modelling exercise and the boundaries of the system being analyzed.
+Identify Risks: Gather data to identify potential risks, considering all components and interactions within the system.
+Develop a Risk Model: Use appropriate tools and techniques (e.g., fault tree analysis, Monte Carlo simulation) to create a model that represents the identified risks and their relationships.
+Assess Likelihood and Impact: Quantify the probability of each risk occurring and evaluate the potential impact on the system.
+Simulate Scenarios: Run simulations to explore different risk scenarios and their effects on the system's performance.
+Analyze Results: Interpret the output from simulations to identify high-priority risks and potential vulnerabilities.
+Develop Mitigation Strategies: Propose measures to reduce the likelihood or impact of identified risks, and incorporate these into the model.
+Monitor and Review: Continuously update the model with new data and insights to reflect changes in the system and its environment.
+
+Show awareness of at least 1 widely used enterprise modelling technique, e.g., employing UML.
+1. **Structural Modeling with UML**:
+   - **Class Diagrams**: These can be used to model the structure of a system or application, including its components and their relationships. In cybersecurity, class diagrams can help in identifying key assets (such as databases, servers, and user interfaces) and their vulnerabilities.
+   - **Component Diagrams**: These show the organization and dependencies between software components. They are useful for understanding how different parts of a system interact and can be crucial for identifying potential points of attack or failure.
+2. **Behavioral Modeling with UML**:
+   - **Use Case Diagrams**: These depict the interactions between actors (users, systems, or external entities) and the system itself. Use case diagrams are valuable in cybersecurity for identifying potential threats from different actors and understanding how they might exploit system vulnerabilities.
+   - **Sequence Diagrams**: These illustrate the flow of interactions between different system components or actors over time. They can help in modeling potential attack scenarios and understanding how a system might respond to security incidents.
+3. **Deployment Modeling with UML**:
+   - **Deployment Diagrams**: These depict the physical deployment of software components on hardware nodes. In cybersecurity, deployment diagrams are useful for identifying security zones, network configurations, and potential points of entry for attackers.
+   - **Component Diagrams**: Besides structural aspects, component diagrams in UML can also help in modeling security components such as firewalls, intrusion detection systems, and encryption modules.
+4. **Risk Analysis and Mitigation**:
+   - UML can also support risk analysis and mitigation by integrating security-related concerns directly into the modeling process. For example, security requirements can be specified using UML’s extension mechanisms or through annotations on diagrams.
+   - UML tools often support plugins or extensions for security-specific modeling, such as threat modeling extensions or security pattern libraries, which can enhance the modeling process in cybersecurity contexts.
+By utilizing UML in the context of cybersecurity risk management, organizations can achieve better clarity and understanding of their systems, potential vulnerabilities, and mitigation strategies. It provides a structured approach to modeling complex systems and analyzing them from a security perspective, thus enhancing overall risk management practices.
+This approach aligns with industry standards and best practices, making UML a powerful tool for integrating cybersecurity considerations into enterprise modeling efforts effectively.
+
