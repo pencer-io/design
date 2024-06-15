@@ -1,0 +1,47 @@
+Choosing a Framework:
+Several recognized cybersecurity frameworks
+	• NIST Cybersecurity Framework (CSF): A voluntary framework from the National Institute of Standards and Technology (NIST) providing a high-level structure for managing cybersecurity risk. It offers a good starting point with its five core functions: Identify, Protect, Detect, Respond, and Recover.
+	• ISO/IEC 27001: An international standard for information security management systems (ISMS). It provides a more comprehensive approach with detailed requirements for implementing and maintaining effective security controls.
+	• CIS Controls: A prioritized set of cybersecurity controls developed by the Center for Internet Security (CIS). These controls are specifically designed to defend against a wide range of cyber threats.
+
+Risk Assessment Process:
+Following the NIST CSF structure:
+1. Identify:
+	• Assets: Identify critical assets involved in the exercise, including:
+		○ Exercise Platform Server
+		○ MPLS Network Devices
+		○ Participant Devices
+		○ User Data (exercise registration, etc.)
+	• Threats: Identify potential threats based on the identified vulnerabilities and threat modeling:
+		○ MitM attacks
+		○ DoS attacks
+		○ Zero-day exploits
+		○ Insider threats (accidental or intentional)
+2. Protect:
+	• Review and assess the existing security controls implemented based on the network design:
+		○ Network segmentation
+		○ Strong encryption
+		○ Secure configuration of network devices and server
+		○ User access controls
+		○ Patch management
+3. Detect:
+	• Evaluate the effectiveness of existing intrusion detection and prevention systems (IDS/IPS) for monitoring network traffic for malicious activity.
+4. Respond:
+	• Assess the organization's incident response plan:
+		○ Does it have a clear process for identifying, containing, and recovering from security incidents during the exercise?
+		○ Are there designated personnel responsible for incident response?
+5. Recover:
+	• Evaluate the organization's disaster recovery plan:
+		○ Can the exercise platform and network be quickly restored in case of a major outage?
+		○ Are backups regularly performed for critical data?
+
+Gap Analysis and Recommendations:
+Based on the assessment, identify any gaps in security posture and recommend improvements:
+	• Implement IDS/IPS if not already deployed.
+	• Conduct vulnerability scans of the exercise platform and network devices.
+	• Develop a specific incident response plan for the cyber exercise, including communication protocols and escalation procedures.
+	• Test the disaster recovery plan to ensure its effectiveness.
+Benefits of using a Standardized Framework:
+	• Provides a structured and repeatable approach to risk assessment.
+	• Ensures alignment with best practices in cybersecurity.
+	• Allows for benchmarking against other organizations.
